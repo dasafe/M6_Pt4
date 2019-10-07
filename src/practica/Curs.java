@@ -45,7 +45,15 @@ public class Curs {
 	}
 
 	public void printCurs() {
-
+		System.out.println("Tutor: " + tutor);
+		System.out.println("Alumnes:");
+		for (String string : alumnes) {
+			System.out.println(string);
+		}
+		System.out.println("Moduls:");
+		for (String string : moduls.keySet()) {
+			System.out.println(string);
+		}
 	}
 
 	public void setCurs(String tutor, ArrayList<String> alumnes, HashMap<String, String> moduls) {
