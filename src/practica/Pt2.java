@@ -1,21 +1,26 @@
 package practica;
 
 import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
-public class Pt2 {
-	private HashMap<String, String> cursos = new HashMap<String, String>();
+public class Pt2 implements Serializable {
 
-	public Pt2(HashMap<String, String> cursos) {
+	private HashMap<String, Object> cursos = new HashMap<String, Object>();
+	private static Scanner reader = new Scanner(System.in);
+
+	public Pt2(HashMap<String, Object> cursos) {
 		super();
 		this.cursos = cursos;
 	}
 
-	public HashMap<String, String> getCursos() {
+	public HashMap<String, Object> getCursos() {
 		return cursos;
 	}
 
-	public void setCursos(HashMap<String, String> cursos) {
+	public void setCursos(HashMap<String, Object> cursos) {
 		this.cursos = cursos;
 	}
 
@@ -26,6 +31,50 @@ public class Pt2 {
 	}
 
 	public static void main(String[] args) {
+		int opcion;
+		do {
+			System.out.println("");
+			System.out.println("PROPOSTA DE RESOLUCIO PT2 (STREAMSD'OBJECTES)");
 
+			System.out.println("==============================================");
+			System.out.println("1. AFEGIR UN NOU CURS");
+			System.out.println("2. MOSTRAR DADES CURS");
+			System.out.println("3. ELIMINAR UN CURS");
+			System.out.println("4. SORTIR");
+			System.out.print("Escull una opcio:");
+			opcion = validacion();
+			switch (opcion) {
+			case 1:
+				String tutor, nom, profe;
+				ArrayList<String> ufs = new ArrayList<String>();
+				ArrayList<String> alumnes = new ArrayList<String>();
+				HashMap<String, Object> moduls = new HashMap<String, Object>();
+				Modul modul = new Modul(nom, profe, ufs);
+				Curs curs = new Curs(tutor, alumnes, moduls);
+				break;
+			case 2:
+
+				break;
+			case 3:
+
+				break;
+			case 4:
+
+				break;
+
+			default:
+				System.out.println("Opcion invalida");
+				break;
+			}
+		} while (opcion != 4);
+	}
+
+	private static int validacion() {
+		while (!reader.hasNextInt()) {
+			reader.next();
+			System.out.println("No valido");
+		}
+		int numero = reader.nextInt();
+		return numero;
 	}
 }

@@ -1,15 +1,16 @@
 package practica;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Curs {
+public class Curs implements Serializable{
 
 	private String tutor;
 	private ArrayList<String> alumnes = new ArrayList<String>();
-	private HashMap<String, String> moduls = new HashMap<String, String>();
+	private HashMap<String, Object> moduls = new HashMap<String, Object>();
 
-	public Curs(String tutor, ArrayList<String> alumnes, HashMap<String, String> moduls) {
+	public Curs(String tutor, ArrayList<String> alumnes, HashMap<String, Object> moduls) {
 		super();
 		this.tutor = tutor;
 		this.alumnes = alumnes;
@@ -32,11 +33,11 @@ public class Curs {
 		this.alumnes = alumnes;
 	}
 
-	public HashMap<String, String> getModuls() {
+	public HashMap<String, Object> getModuls() {
 		return moduls;
 	}
 
-	public void setModuls(HashMap<String, String> moduls) {
+	public void setModuls(HashMap<String, Object> moduls) {
 		this.moduls = moduls;
 	}
 
@@ -54,11 +55,5 @@ public class Curs {
 		for (String string : moduls.keySet()) {
 			System.out.println(string);
 		}
-	}
-
-	public void setCurs(String tutor, ArrayList<String> alumnes, HashMap<String, String> moduls) {
-		this.tutor = tutor;
-		this.alumnes = alumnes;
-		this.moduls = moduls;
 	}
 }

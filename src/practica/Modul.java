@@ -46,13 +46,7 @@ public class Modul implements Serializable {
 	}
 
 	public void printModul() {
-		System.out.println("Nom: " + nom + "\nProfe: " + profe + "Moduls:\n");
+		System.out.println("Nom: " + nom + "\nProfe: " + profe + "UFS:\n");
 		printUFs();
-	}
-
-	public void setModul(String nom, String profe, ArrayList<String> ufs) {
-		this.nom = nom;
-		this.profe = profe;
-		this.ufs = ufs;
 	}
 }
