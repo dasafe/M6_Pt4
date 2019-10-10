@@ -9,7 +9,7 @@ public class Curs implements Serializable {
 
 	private String tutor;
 	private ArrayList<String> alumnes = new ArrayList<String>();
-	private HashMap<String, Object> moduls = new HashMap<String, Object>();
+	private HashMap<String, Modul> moduls = new HashMap<String, Modul>();
 	private static Scanner reader = new Scanner(System.in);
 
 	public Curs() {
@@ -32,11 +32,11 @@ public class Curs implements Serializable {
 		this.alumnes = alumnes;
 	}
 
-	public HashMap<String, Object> getModuls() {
+	public HashMap<String, Modul> getModuls() {
 		return moduls;
 	}
 
-	public void setModuls(HashMap<String, Object> moduls) {
+	public void setModuls(HashMap<String, Modul> moduls) {
 		this.moduls = moduls;
 	}
 
@@ -50,13 +50,14 @@ public class Curs implements Serializable {
 
 		System.out.println("Introduce el numero de alumnos que cursan este curso:");
 		int nAlumnos = validacion();
+		reader.nextLine();
 		System.out.println("Introduce el nombre de los alumnos:");
-		for (int i = 0; i <= nAlumnos; i++) {
+		for (int i = 0; i < nAlumnos; i++) {
 			alumnes.add(reader.nextLine());
 		}
-		reader.nextLine();
 		System.out.println("Numero de modulos:");
 		int nModulos = validacion();
+		reader.nextLine();
 		for (int i = 0; i < nModulos; i++) {
 			System.out.println("Nombre del modulo:");
 			String key = reader.nextLine();

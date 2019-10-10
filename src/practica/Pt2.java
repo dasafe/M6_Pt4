@@ -8,19 +8,19 @@ import java.util.Scanner;
 
 public class Pt2 implements Serializable {
 
-	private static HashMap<String, Object> cursos = new HashMap<String, Object>();
+	private static HashMap<String, Curs> cursos = new HashMap<String, Curs>();
 	private static Scanner reader = new Scanner(System.in);
 
-	public Pt2(HashMap<String, Object> cursos) {
+	public Pt2(HashMap<String, Curs> cursos) {
 		super();
 		this.cursos = cursos;
 	}
 
-	public HashMap<String, Object> getCursos() {
+	public HashMap<String, Curs> getCursos() {
 		return cursos;
 	}
 
-	public void setCursos(HashMap<String, Object> cursos) {
+	public void setCursos(HashMap<String, Curs> cursos) {
 		this.cursos = cursos;
 	}
 
@@ -50,17 +50,24 @@ public class Pt2 implements Serializable {
 //				ArrayList<String> alumnes = new ArrayList<String>();
 //				HashMap<String, Object> moduls = new HashMap<String, Object>();
 //				Modul modul = new Modul();
-				
+
 				reader.nextLine();
 				System.out.println("Nombre del curso:");
 				String key = reader.nextLine();
 				Curs curs = new Curs();
 				curs.setCurs();
 				cursos.put(key, curs);
-				
+
 				break;
 			case 2:
-
+				System.out.println("-Cursos-");
+				int i = 1;
+				for (String string : cursos.keySet()) {
+					System.out.println(i + ". " + string);
+				}
+				System.out.println("Que curso quieres mostrar?");
+				Curs c = cursos.get(reader.nextLine());
+				c.printCurs();
 				break;
 			case 3:
 

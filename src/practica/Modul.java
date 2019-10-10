@@ -51,8 +51,8 @@ public class Modul implements Serializable {
 		System.out.println("Numero de UFS que tiene:");
 		int nUfs = validacion();
 		reader.nextLine();
-		for (int i = 0; i <= nUfs; i++) {
-			System.out.println("Nombre de la UF" + i + 1);
+		for (int i = 0; i < nUfs; i++) {
+			System.out.println("Nombre de la UF" + (i +1));
 			ufs.add(reader.nextLine());
 		}
 	}
