@@ -48,14 +48,22 @@ public class Curs implements Serializable {
 		System.out.println("Nombre del tutor:");
 		this.tutor = reader.nextLine();
 
-		ArrayList<String> alumnes = new ArrayList<String>();
 		System.out.println("Introduce el numero de alumnos que cursan este curso:");
 		int nAlumnos = validacion();
-		for (int i = 0; i < nAlumnos; i++) {
-
+		System.out.println("Introduce el nombre de los alumnos:");
+		for (int i = 0; i <= nAlumnos; i++) {
+			alumnes.add(reader.nextLine());
 		}
-		this.alumnes = alumnes;
-		this.moduls = moduls;
+		reader.nextLine();
+		System.out.println("Numero de modulos:");
+		int nModulos = validacion();
+		for (int i = 0; i < nModulos; i++) {
+			System.out.println("Nombre del modulo:");
+			String key = reader.nextLine();
+			Modul modul = new Modul();
+			modul.setModul(key);
+			moduls.put(key, modul);
+		}
 	}
 
 	public void printCurs() {

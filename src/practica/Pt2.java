@@ -41,7 +41,7 @@ public class Pt2 implements Serializable {
 			System.out.println("2. MOSTRAR DADES CURS");
 			System.out.println("3. ELIMINAR UN CURS");
 			System.out.println("4. SORTIR");
-			System.out.print("Escull una opcio:");
+			System.out.print("Escull una opcio: ");
 			opcion = validacion();
 			switch (opcion) {
 			case 1:
@@ -51,6 +51,7 @@ public class Pt2 implements Serializable {
 //				HashMap<String, Object> moduls = new HashMap<String, Object>();
 //				Modul modul = new Modul();
 				
+				reader.nextLine();
 				System.out.println("Nombre del curso:");
 				String key = reader.nextLine();
 				Curs curs = new Curs();

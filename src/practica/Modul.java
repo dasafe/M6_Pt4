@@ -9,7 +9,7 @@ public class Modul implements Serializable {
 	private String profe;
 	private ArrayList<String> ufs = new ArrayList<String>();
 	private static Scanner reader = new Scanner(System.in);
-	
+
 	public Modul() {
 		super();
 	}
@@ -43,15 +43,31 @@ public class Modul implements Serializable {
 			System.out.println(string);
 		}
 	}
-	
-	public void setModul(String nom, String profe, ArrayList<String> ufs) {
+
+	public void setModul(String nom) {
 		this.nom = nom;
-		this.profe = profe;
-		this.ufs = ufs;
+		System.out.println("Nombre del profesor:");
+		this.profe = reader.nextLine();
+		System.out.println("Numero de UFS que tiene:");
+		int nUfs = validacion();
+		reader.nextLine();
+		for (int i = 0; i <= nUfs; i++) {
+			System.out.println("Nombre de la UF" + i + 1);
+			ufs.add(reader.nextLine());
+		}
 	}
-	
+
 	public void printModul() {
 		System.out.println("Nom: " + nom + "\nProfe: " + profe + "UFS:\n");
 		printUFs();
+	}
+
+	private static int validacion() {
+		while (!reader.hasNextInt()) {
+			reader.next();
+			System.out.println("No valido");
+		}
+		int numero = reader.nextInt();
+		return numero;
 	}
 }
