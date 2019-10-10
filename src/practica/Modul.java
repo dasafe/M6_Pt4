@@ -2,17 +2,16 @@ package practica;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Modul implements Serializable {
 	private String nom;
 	private String profe;
 	private ArrayList<String> ufs = new ArrayList<String>();
-
-	public Modul(String nom, String profe, ArrayList<String> ufs) {
+	private static Scanner reader = new Scanner(System.in);
+	
+	public Modul() {
 		super();
-		this.nom = nom;
-		this.profe = profe;
-		this.ufs = ufs;
 	}
 
 	public String getNom() {
@@ -44,7 +43,13 @@ public class Modul implements Serializable {
 			System.out.println(string);
 		}
 	}
-
+	
+	public void setModul(String nom, String profe, ArrayList<String> ufs) {
+		this.nom = nom;
+		this.profe = profe;
+		this.ufs = ufs;
+	}
+	
 	public void printModul() {
 		System.out.println("Nom: " + nom + "\nProfe: " + profe + "UFS:\n");
 		printUFs();

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Pt2 implements Serializable {
 
-	private HashMap<String, Object> cursos = new HashMap<String, Object>();
+	private static HashMap<String, Object> cursos = new HashMap<String, Object>();
 	private static Scanner reader = new Scanner(System.in);
 
 	public Pt2(HashMap<String, Object> cursos) {
@@ -45,12 +45,18 @@ public class Pt2 implements Serializable {
 			opcion = validacion();
 			switch (opcion) {
 			case 1:
-				String tutor, nom, profe;
-				ArrayList<String> ufs = new ArrayList<String>();
-				ArrayList<String> alumnes = new ArrayList<String>();
-				HashMap<String, Object> moduls = new HashMap<String, Object>();
-				Modul modul = new Modul(nom, profe, ufs);
-				Curs curs = new Curs(tutor, alumnes, moduls);
+//				String tutor, nom, profe;
+//				ArrayList<String> ufs = new ArrayList<String>();
+//				ArrayList<String> alumnes = new ArrayList<String>();
+//				HashMap<String, Object> moduls = new HashMap<String, Object>();
+//				Modul modul = new Modul();
+				
+				System.out.println("Nombre del curso:");
+				String key = reader.nextLine();
+				Curs curs = new Curs();
+				curs.setCurs();
+				cursos.put(key, curs);
+				
 				break;
 			case 2:
 

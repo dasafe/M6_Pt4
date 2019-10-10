@@ -3,18 +3,17 @@ package practica;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
-public class Curs implements Serializable{
+public class Curs implements Serializable {
 
 	private String tutor;
 	private ArrayList<String> alumnes = new ArrayList<String>();
 	private HashMap<String, Object> moduls = new HashMap<String, Object>();
+	private static Scanner reader = new Scanner(System.in);
 
-	public Curs(String tutor, ArrayList<String> alumnes, HashMap<String, Object> moduls) {
+	public Curs() {
 		super();
-		this.tutor = tutor;
-		this.alumnes = alumnes;
-		this.moduls = moduls;
 	}
 
 	public String getTutor() {
@@ -45,6 +44,20 @@ public class Curs implements Serializable{
 		return null;
 	}
 
+	public void setCurs() {
+		System.out.println("Nombre del tutor:");
+		this.tutor = reader.nextLine();
+
+		ArrayList<String> alumnes = new ArrayList<String>();
+		System.out.println("Introduce el numero de alumnos que cursan este curso:");
+		int nAlumnos = validacion();
+		for (int i = 0; i < nAlumnos; i++) {
+
+		}
+		this.alumnes = alumnes;
+		this.moduls = moduls;
+	}
+
 	public void printCurs() {
 		System.out.println("Tutor: " + tutor);
 		System.out.println("Alumnes:");
@@ -55,5 +68,14 @@ public class Curs implements Serializable{
 		for (String string : moduls.keySet()) {
 			System.out.println(string);
 		}
+	}
+
+	private static int validacion() {
+		while (!reader.hasNextInt()) {
+			reader.next();
+			System.out.println("No valido");
+		}
+		int numero = reader.nextInt();
+		return numero;
 	}
 }
