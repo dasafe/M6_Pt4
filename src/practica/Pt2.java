@@ -43,14 +43,9 @@ public class Pt2 implements Serializable {
 			System.out.println("4. SORTIR");
 			System.out.print("Escull una opcio: ");
 			opcion = validacion();
+			System.out.println();
 			switch (opcion) {
 			case 1:
-//				String tutor, nom, profe;
-//				ArrayList<String> ufs = new ArrayList<String>();
-//				ArrayList<String> alumnes = new ArrayList<String>();
-//				HashMap<String, Object> moduls = new HashMap<String, Object>();
-//				Modul modul = new Modul();
-
 				reader.nextLine();
 				System.out.println("Nombre del curso:");
 				String key = reader.nextLine();
@@ -64,8 +59,10 @@ public class Pt2 implements Serializable {
 				int i = 1;
 				for (String string : cursos.keySet()) {
 					System.out.println(i + ". " + string);
+					i++;
 				}
 				System.out.println("Que curso quieres mostrar?");
+				reader.nextLine();
 				Curs c = cursos.get(reader.nextLine());
 				c.printCurs();
 				break;
@@ -73,7 +70,7 @@ public class Pt2 implements Serializable {
 
 				break;
 			case 4:
-
+				System.out.println("Bye!");
 				break;
 
 			default:
