@@ -48,7 +48,7 @@ public class Pt2 implements Serializable {
 			case 1:
 				reader.nextLine();
 				System.out.println("Nombre del curso:");
-				String key = reader.nextLine();
+				String key = reader.nextLine().toUpperCase();
 				Curs curs = new Curs();
 				curs.setCurs();
 				cursos.put(key, curs);
@@ -63,11 +63,19 @@ public class Pt2 implements Serializable {
 				}
 				System.out.println("Que curso quieres mostrar?");
 				reader.nextLine();
-				Curs c = cursos.get(reader.nextLine());
+				Curs c = cursos.get(reader.nextLine().toUpperCase());
 				c.printCurs();
 				break;
 			case 3:
-
+				System.out.println("-Cursos-");
+				int j = 1;
+				for (String string : cursos.keySet()) {
+					System.out.println(j + ". " + string);
+					j++;
+				}
+				System.out.println("Que curso quieres eliminar?");
+				reader.nextLine();
+				cursos.remove(reader.nextLine().toUpperCase());
 				break;
 			case 4:
 				System.out.println("Bye!");

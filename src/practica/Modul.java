@@ -47,13 +47,13 @@ public class Modul implements Serializable {
 	public void setModul(String nom) {
 		this.nom = nom;
 		System.out.println("Nombre del profesor:");
-		this.profe = reader.nextLine();
+		this.profe = reader.nextLine().toUpperCase();
 		System.out.println("Numero de UFS que tiene:");
 		int nUfs = validacion();
 		reader.nextLine();
 		for (int i = 0; i < nUfs; i++) {
 			System.out.println("Nombre de la UF" + (i +1));
-			ufs.add(reader.nextLine());
+			ufs.add(reader.nextLine().toUpperCase());
 		}
 	}
 

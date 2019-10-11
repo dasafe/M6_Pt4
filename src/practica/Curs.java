@@ -46,21 +46,21 @@ public class Curs implements Serializable {
 
 	public void setCurs() {
 		System.out.println("Nombre del tutor:");
-		this.tutor = reader.nextLine();
+		this.tutor = reader.nextLine().toUpperCase();
 
 		System.out.println("Introduce el numero de alumnos que cursan este curso:");
 		int nAlumnos = validacion();
 		reader.nextLine();
 		System.out.println("Introduce el nombre de los alumnos:");
 		for (int i = 0; i < nAlumnos; i++) {
-			alumnes.add(reader.nextLine());
+			alumnes.add(reader.nextLine().toUpperCase());
 		}
 		System.out.println("Numero de modulos:");
 		int nModulos = validacion();
 		reader.nextLine();
 		for (int i = 0; i < nModulos; i++) {
 			System.out.println("Nombre del modulo:");
-			String key = reader.nextLine();
+			String key = reader.nextLine().toUpperCase();
 			Modul modul = new Modul();
 			modul.setModul(key);
 			moduls.put(key, modul);
